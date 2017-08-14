@@ -26,5 +26,12 @@ namespace PersonalWebsite.Controllers
 
             return View();
         }
+
+        public ActionResult ComingSoon()
+        {
+            ViewBag.Message = "Page under construction.";
+
+            return View();
+        }
     }
 }
