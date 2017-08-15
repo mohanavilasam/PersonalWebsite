@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+<header class="intro-header" style="background-image: url('../../img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -19,27 +19,27 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-preview">
-                <a href="post.html">
+                <a href="#" onclick="location.href='@Url.Action("ComingSoon")'">
                     <h2 class="post-title">
-                        Man must explore, and this is exploration at its greatest
+                        A very intresting article
                     </h2>
                     <h3 class="post-subtitle">
-                        Problems look mighty small from 150 miles up
+                        Something that will captivate you
                     </h3>
                 </a>
-                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
+                <p class="post-meta">Posted by <a href="#">Maneesh</a> on August 15, 2017</p>
             </div>
             <hr>
             <div class="post-preview">
-                <a href="post.html">
+                <a href="#" onclick="location.href='@Url.Action("ComingSoon")'">
                     <h2 class="post-title">
-                        I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
+                        Another very intresting article
                     </h2>
                 </a>
-                <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
+                <p class="post-meta">Posted by <a href="#">Maneesh</a> on August 15, 2017</p>
             </div>
             <hr>
-            <div class="post-preview">
+            @*<div class="post-preview">
                 <a href="post.html">
                     <h2 class="post-title">
                         Science has not yet mastered prophecy
@@ -62,13 +62,13 @@
                 </a>
                 <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on July 8, 2014</p>
             </div>
-            <hr>
+            <hr>*@
             <!-- Pager -->
-            <ul class="pager">
+            @*<ul class="pager">
                 <li class="next">
                     <a href="#">Older Posts &rarr;</a>
                 </li>
-            </ul>
+            </ul>*@
         </div>
     </div>
 </div>

@@ -1,6 +1,8 @@
-﻿@{
-    ViewBag.Title = "Contact";
+﻿@model PersonalWebsite.Models.ContactFormModel
+@{
+    ViewBag.Title = "Contact Me";
 }
+
 
     <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
@@ -9,7 +11,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="page-heading">
-                    <h1>Contact Me</h1>
+                    <h1>@ViewBag.Title</h1>
                     <hr class="small">
                     <span class="subheading">Have questions? I have answers (maybe).</span>
                 </div>
@@ -18,6 +20,9 @@
     </div>
 </header>
 <!-- Main Content -->
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -28,30 +33,31 @@
             <form name="sentMessage" id="contactForm" novalidate>
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
-                        <label>Name</label>
-                        <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                        @Html.LabelFor(m => m.FromName)
+                        @Html.TextBoxFor(m => m.FromName, new { @class = "form-control", @placeholder = "Your Name" })
+                        @Html.ValidationMessageFor(m => m.FromName)
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
-                        <label>Email Address</label>
-                        <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-                        <p class="help-block text-danger"></p>
+                        @Html.LabelFor(m => m.FromEmail)
+                        @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control", @placeholder = "Your Email" })
+                        @Html.ValidationMessageFor(m => m.FromEmail)
                     </div>
                 </div>
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
-                        <label>Phone Number</label>
-                        <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
-                        <p class="help-block text-danger"></p>
+                        @Html.LabelFor(m => m.FromPhone)
+                        @Html.TextBoxFor(m => m.FromPhone, new { @class = "form-control", @placeholder = "Phone Number" })
+                        @Html.ValidationMessageFor(m => m.FromPhone)
                     </div>
                 </div>
                 <div class="row control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
-                        <label>Message</label>
-                        <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                        <p class="help-block text-danger"></p>
+                        @Html.LabelFor(m => m.FromMessage)
+                        @Html.TextAreaFor(m => m.FromMessage, new { @class = "form-control", @placeholder = "Message", @row = 5 })
+                        @Html.ValidationMessageFor(m => m.FromMessage)
                     </div>
                 </div>
                 <br>
@@ -65,4 +71,5 @@
         </div>
     </div>
 </div>
+}
 <hr>
